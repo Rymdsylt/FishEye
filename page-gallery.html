@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='styling.css' rel='stylesheet'>
+	<title>Gallery - Signal Warning</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="icon" href="images/invert-logo-32.png" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<script>
+  function openImage(img) {
+    const overlay = document.getElementById('imageOverlay');
+    const expandedImg = overlay.querySelector('.expanded-img');
+    expandedImg.src = img.src;
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  }
+
+  function closeImage() {
+    const overlay = document.getElementById('imageOverlay');
+    overlay.style.display = 'none';
+    document.body.style.overflow = ''; // Re-enable scrolling
+  }
+</script>
+
+<body>
+	<header class="de-red">
+		<div class="de-orange Header-LogoContainer">
+			<a href= "page-homepage.html">
+				<img src="images/logo-header.png">
+			</a>
+		</div>
+		<div class="de-orange HeaderText-Container-Margin poppins-regular">
+				<div class="de-green HeaderText-Content">
+					<a href= "page-homepage.html">Homepage</a>
+				</div>			
+				<div class="de-green HeaderText-Content">
+					<a href= "page-story.html">Story</a>
+				</div>
+				<div class="de-green HeaderText-Content">
+					<a href= "page-characters.html">Characters</a>
+				</div>
+				<div class="de-green HeaderText-Content">
+					<a href= "page-world.html">World</a>
+				</div>
+				<div class="de-green HeaderText-Content">
+					<a href= "page-gallery.html">Gallery</a>
+				</div>	
+				<div class="de-green HeaderText-Content">
+					<a href= "page-about.html">About</a>
+				</div>
+
+		</div>
+	</header>
+
+	<div class="WSHeader">
+		/#/
+	</div>
+
+	<div class="de-red Gallery-HeadlineContainer">
+		<div class="de-indigo Gallery-Content-HeadlineContainer">
+			<div class="de-green Gallery-TextContainer">
+					<img src="images/title-conceptart.png" class="image-alpha-shadow">
+			</div>
+			<div class="de-orange Gallery-HeadImageContainer">
+			</div>
+		</div>
+	</div>
+
+	<div class="de-orange Gallery-ClusterContainer">
+		<div class="de-red Gallery-Content-ClusterContainer-1">
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-1.jpg" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 1
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-2.jpg" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 2
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-3.jpg" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 3
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-4.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 4
+			</div>
+		</div>
+
+		<div class="de-red Gallery-Content-ClusterContainer-1">
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-5.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 1
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-6.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 2
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-7.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 3
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-8.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 4
+			</div>
+		</div>
+
+		<div class="de-red Gallery-Content-ClusterContainer-1">
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-9.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 1
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-10.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 2
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-11.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 3
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-12.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 4
+			</div>
+		</div>
+
+		<div class="de-red Gallery-Content-ClusterContainer-1">
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-13.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 1
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-14.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 2
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-15.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 3
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-16.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 4
+			</div>
+		</div>
+
+		<div class="de-red Gallery-Content-ClusterContainer-1">
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-17.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 1
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-5a.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 2
+			</div>
+			<div class="de-blue Clicks-ContainerConcept poppins-regular ">
+				<img src ="images/concept-10a.png" class="de-green click-to-expand" onclick="openImage(this)">
+				Concept Name 3
+			</div>
+		</div>
+
+		</div>
+
+
+
+
+
+
+
+		<div id="imageOverlay" class="image-overlay" onclick="closeImage()">
+  			<span class="close-btn">&times;</span>
+  			<img src="" class="expanded-img">
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<footer>
+		<div class="de-red footer-MainContainer">
+			<div class="de-green Footer-LogoContainer logo-1">
+			</div>
+			<div class="de-green Footer-LogoContainer logo-2">
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

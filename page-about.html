@@ -1,68 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='css/bootstrap.min.css' rel='stylesheet'>
 	<link href='styling.css' rel='stylesheet'>
+	<link href='css/aos.css' rel='stylesheet'>
 	<title>About Us - Signal Warning</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="icon" href="images/invert-logo-32.png" type="image/x-icon">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
 	<style>
-		.members-section {
-			height: 100vh;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			overflow: hidden;
-		}
-
-		.About-ImageContainer {
-			width: 100%;
-			height: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.members-image-fixed {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center;
-		}
-
-		.divider-section {
-			background-color: #304c7c;
-			height: 5vh;
-		}
-
 		.about-content-section {
 			background-color: #c0ecfc;
-			min-height: 50vh;
+			min-height: 100vh;
 			padding: 5rem 2rem;
 		}
 
-		.floating-about-logo {
+		.member-card {
+			border-radius: 35px;
+			padding: 20px;
+			margin-bottom: 20px;
+			color: white;
+			display: flex;
+			align-items: center;
+			gap: 15px;
+			min-height: 120px;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.member-card:hover {
+			transform: scale(1.05);
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+		}        .member-card:hover .member-name,
+        .member-card:hover .member-fullname {
+			z-index: 999;
+			-webkit-text-stroke: 1px black;
+			overflow: visible;
+			position: relative;
+			transform: translateZ(50px);
+			transition: transform 0.3s ease;
+		}
+
+		.member-img {
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			object-fit: cover;
+			flex-shrink: 0;
+		}
+
+		.member-details {
+			flex: 1;
+			min-width: 0;
+			padding-right: 10px;
+		}
+
+		.member-name {
+			font-size: 1.8rem;
+			margin: 0;
+			font-weight: bold;
+			line-height: 1;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.member-fullname {
+			font-size: 1.1rem;
+			margin: 5px 0 0 0;
+			font-weight: normal;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.role-tags {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+			flex-shrink: 0;
+			width: auto;
+		}
+
+		.role-tag {
+			background-color: white;
+			color: black;
+			padding: 6px 12px;
+			border-radius: 20px;
+			font-size: 0.85rem;
+			white-space: nowrap;
+			font-weight: 500;
+			text-align: center;
+		}
+
+		.yellow-bg {
+			background-color: #FFB800;
+		}
+
+		.green-bg {
+			background-color: #4C8C4A;
+		}
+
+		.blue-bg {
+			background-color: #1877F2;
+		}
+
+		.navy-bg {
+			background-color: #1B3168;
+		}
+
+		.cyan-bg {
+			background-color: #00C2FF;
+		}
+
+		.light-blue-bg {
+			background-color: #69BAEA;
+		}
+
+		.orange-bg {
+			background-color: #FF8A00;
+		}
+
+		.about-text {
+			padding: 2rem;
+		}
+
+		.about-title {
+			font-size: 4rem;
+			font-weight: bold;
+			color: #000;
+			margin-bottom: 1.5rem;
+		}
+
+		.blue-lines {
+			height: 3px;
+			background-color: #304c7c;
+			margin-bottom: 2rem;
+			position: relative;
+		}
+
+		.blue-lines::before,
+		.blue-lines::after {
+			content: '';
 			position: absolute;
-			top: 0;
+			height: 3px;
+			background-color: #304c7c;
 			left: 0;
-			z-index: 2;
+			right: 0;
 		}
 
-		.floating-about-logo img {
-			width: 50%;
-			height: 50%;
-			margin-top: 5rem !important;
-			margin-left: 5rem !important;
+		.blue-lines::before {
+			top: -10px;
 		}
 
-		.About-TextContainer {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 0 2rem;
+		.blue-lines::after {
+			bottom: -10px;
 		}
 	</style>
 </head>
@@ -72,29 +172,29 @@
 
 	<header class="de-red">
 		<div class="de-orange Header-LogoContainer">
-			<a href= "page-homepage.html">
+			<a href="page-homepage.html">
 				<img src="images/logo-header.png">
 			</a>
-			</div>
+		</div>
 		<div class="de-orange HeaderText-Container-Margin poppins-regular">
-				<div class="de-green HeaderText-Content">
-					<a href= "page-homepage.html">Homepage</a>
-				</div>			
-				<div class="de-green HeaderText-Content">
-					<a href= "page-story.html">Story</a>
-				</div>
-				<div class="de-green HeaderText-Content">
-					<a href= "page-characters.html">Characters</a>
-				</div>
-				<div class="de-green HeaderText-Content">
-					<a href= "page-world.html">World</a>
-				</div>
-				<div class="de-green HeaderText-Content">
-					<a href= "page-gallery.html">Gallery</a>
-				</div>	
-				<div class="de-green HeaderText-Content">
-					<a href= "page-about.html">About</a>
-				</div>
+			<div class="de-green HeaderText-Content">
+				<a href="page-homepage.html">Homepage</a>
+			</div>
+			<div class="de-green HeaderText-Content">
+				<a href="page-story.html">Story</a>
+			</div>
+			<div class="de-green HeaderText-Content">
+				<a href="page-characters.html">Characters</a>
+			</div>
+			<div class="de-green HeaderText-Content">
+				<a href="page-world.html">World</a>
+			</div>
+			<div class="de-green HeaderText-Content">
+				<a href="page-gallery.html">Gallery</a>
+			</div>
+			<div class="de-green HeaderText-Content">
+				<a href="page-about.html">About</a>
+			</div>
 
 		</div>
 	</header>
@@ -105,25 +205,118 @@
 	</div>
 
 	<main>
-
-		<div class="floating-about-logo">
-			<img src="assets/about/about-us.png" alt="About Us" class="img-fluid mt-5" style = "width: 30%; height: 30%;">
-		</div>
-
-		<section class="members-section">
-			<div class="About-ImageContainer">
-				<img src="assets/about/members.png" alt="Team Members" class="members-image-fixed">
-			</div>
-		</section>
-
-		<section class="divider-section"></section> <!--blue line lang e2-->
-
-
 		<section class="about-content-section">
-			<div class="About-TextContainer poppins-regular font-BodyText">
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+			<div class="container">
+				<div class="row">
+			
+					<div class="col-md-4" data-aos="fade-right"> <!-- HAEL Card -->
+						<div class="member-card yellow-bg">
+							<img src="assets/about/MEMBER-Hael.png" class="member-img" alt="HAEL">
+							<div class="member-details">
+								<h3 class="member-name">HAEL</h3>
+								<h4 class="member-fullname">Lourchielle Ashley</h4>
+							</div>
+							<div class="role-tags">
+								<span class="role-tag">DIRECTOR</span>
+								<span class="role-tag">WRITER</span>
+							</div>
+						</div>
+
+						<!-- PETRASANTA Card -->
+						<div class="member-card green-bg">
+							<img src="assets/about/MEMBER-Petrasanta.png" class="member-img" alt="PETRASANTA">
+							<div class="member-details">
+								<h3 class="member-name">PETRASANTA</h3>
+								<h4 class="member-fullname">Eru</h4>
+							</div>
+							<div class="role-tags">
+								<span class="role-tag">PRODUCER</span>
+							</div>
+						</div>
+						<!-- STA. MARIA Card -->
+						<div class="member-card blue-bg">
+							<img src="assets/about/MEMBER-Sta.Maria.png" class="member-img" alt="STA. MARIA">
+							<div class="member-details">
+								<h3 class="member-name">STA. MARIA</h3>
+								<h4 class="member-fullname">Lynno Gabriel</h4>
+							</div>
+							<div class="role-tags">
+								<span class="role-tag">LEAD CONCEPTS</span>
+							</div>
+						</div>
+					</div>
+
+					
+					<div class="col-md-4" data-aos="fade-right">
+						<!-- AUSTRIA Card -->
+						<div class="member-card navy-bg">
+							<img src="assets/about/MEMBER-Austria.png" class="member-img" alt="AUSTRIA">
+							<div class="member-details">
+								<h3 class="member-name">AUSTRIA</h3>
+								<h4 class="member-fullname">Jon Ramon</h4>
+							</div>
+							<div class="role-tags">
+								<span class="role-tag">ART DIRECTOR</span>
+							</div>
+						</div>
+
+						<!-- ODITA Card -->
+						<div class="member-card cyan-bg">
+							<img src="assets/about/MEMBER-Odita.png" class="member-img" alt="ODITA">
+							<div class="member-details">
+								<h3 class="member-name">ODITA</h3>
+								<h4 class="member-fullname">Alexa</h4>
+							</div>
+							<div class="role-tags">
+								<span class="role-tag">ANIMATOR</span>
+							</div>
+						</div>
+
+						<!-- OLIVA Card -->
+						<div class="member-card light-blue-bg">
+							<img src="assets/about/MEMBER-Oliva.png" class="member-img" alt="OLIVA">
+							<div class="member-details">
+								<h3 class="member-name">OLIVA</h3>
+								<h4 class="member-fullname">Nathalie Yvonne</h4>
+							</div>
+							<div class="role-tags">
+								<span class="role-tag">PRODUCER</span>
+							</div>
+						</div>
+
+						<!-- ROSETE Card -->
+						<div class="member-card orange-bg">
+							<img src="assets/about/MEMBER-Rosete.png" class="member-img" alt="ROSETE">
+							<div class="member-details">
+								<h3 class="member-name">ROSETE</h3>
+								<h4 class="member-fullname">John Ray</h4>
+							</div>
+							<div class="role-tags">
+								<span class="role-tag">ANIMATOR</span>
+							</div>
+						</div>
+					</div>
+
+			
+					<div class="col-md-4" data-aos="fade-left">
+						<div class="about-text">
+							<img src="assets/about/about-us.png" class="about-title">
+							<div class="blue-lines"></div>
+							<p class="poppins-regular font-BodyText">
+								Endscener Production is a group of Multimedia Arts students from the University of
+								Makati's Institute of Arts and Design.
+
+								<br><br> Endscener is a play on the phrase "end scene" and ensina, the Filipino term for
+								acorn.
+
+								<br><br> Endscener Production aims to tell silly stories from local experiences.
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
+		<section class="divider-section"></section>
 	</main>
 
 	<footer>
@@ -136,6 +329,13 @@
 	</footer>
 
 	<script src="/js/bootstrap.bundle.min.js"></script>
-
+	<script src="js/aos.js"></script>
+	<script>
+		AOS.init({
+			duration: 1000,
+			once: false
+		});
+	</script>
 </body>
+
 </html>
